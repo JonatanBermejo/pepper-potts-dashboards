@@ -51,13 +51,19 @@ body{font-family:Arial,sans-serif;background:#F5F7FA;color:#333;font-size:14px}
 </style>
 </head>
 <body>
-<div id="lockscreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1F4E79,#2E75B6);display:flex;align-items:center;justify-content:center;z-index:9999">
-  <div style="background:white;border-radius:12px;padding:32px;width:300px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+<div id="lockscreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1F4E79,#2E75B6);display:flex;align-items:center;justify-content:center;z-index:9999;-webkit-overflow-scrolling:touch">
+  <div style="background:white;border-radius:12px;padding:32px;width:90%;max-width:320px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3)">
     <div style="font-size:32px;margin-bottom:8px">⚡</div>
     <h2 style="color:#1F4E79;font-size:16px;margin-bottom:4px">Pepper Potts</h2>
     <p style="color:#999;font-size:12px;margin-bottom:20px">Informe confidencial</p>
-    <input id="pwd" type="password" placeholder="Contraseña" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:14px;margin-bottom:12px;outline:none" onkeydown="if(event.key==='Enter')unlock()">
-    <button onclick="unlock()" style="width:100%;padding:10px;background:#1F4E79;color:white;border:none;border-radius:6px;font-size:14px;cursor:pointer">Acceder</button>
+    <input id="pwd" type="password" placeholder="Contraseña" 
+      style="width:100%;padding:12px;border:2px solid #ddd;border-radius:6px;font-size:16px;margin-bottom:12px;outline:none;-webkit-appearance:none;box-sizing:border-box" 
+      onkeydown="if(event.key==='Enter')unlock()"
+      autocomplete="current-password">
+    <button onclick="unlock()" 
+      style="width:100%;padding:12px;background:#1F4E79;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;-webkit-appearance:none">
+      Acceder
+    </button>
     <p id="err" style="color:#e74c3c;font-size:12px;margin-top:8px;display:none">Contraseña incorrecta</p>
   </div>
 </div>
@@ -68,10 +74,8 @@ function unlock(){
   }else{
     document.getElementById('err').style.display='block';
     document.getElementById('pwd').value='';
-    document.getElementById('pwd').focus();
   }
 }
-document.getElementById('pwd').focus();
 </script>
 
 <div class="hdr">
@@ -91,7 +95,7 @@ document.getElementById('pwd').focus();
 
   <div class="box analisis">
     <h2>🤖 Análisis ejecutivo</h2>
-    <p>📊 El período del <strong>1 al 8 de junio de 2026</strong> cerró con <strong>1.155 contratos</strong> y <strong>290.742€</strong> facturados, con una cuota media de <strong>17,20€</strong>. Respecto al mismo período del mes anterior (mayo 2026, <strong>1.163 contratos</strong> y <strong>289.499€</strong>), los contratos caen ligeramente un <strong>-0,7%</strong>, pero la facturación sube un <strong>+0,4%</strong> gracias al incremento de la cuota media de <strong>17,00€ a 17,20€</strong>. Sin embargo, la comparativa interanual refleja una caída más preocupante: <strong>-164 contratos (-12,4%)</strong> y <strong>-16.548€ (-5,4%)</strong> respecto a junio 2025, donde se cerraron <strong>1.319 contratos</strong> a <strong>307.290€</strong>.</p><p>📍 En el análisis por plaza, <strong>Madrid</strong> sigue siendo el principal mercado con <strong>314 contratos</strong>, aunque acusa una caída notable frente a los <strong>352 de mayo</strong> y una pérdida de peso relativo. <strong>Barcelona</strong> muestra una tendencia positiva al pasar de <strong>144 a 168 contratos</strong> (+16,7%), consolidándose como la segunda plaza más fuerte. Destacan también las subidas de <strong>Bilbao</strong> (de 91 a <strong>100</strong>) y <strong>Palma de Mallorca</strong> (de 75 a <strong>93</strong>), mientras que <strong>Alicante</strong> experimenta un retroceso significativo, bajando de <strong>113 a 92 contratos</strong> (-18,6%). <strong>Tenerife</strong> desaparece del top 10 en junio, lo que merece seguimiento.</p><p>📉 La tendencia interanual es la señal de alerta más relevante del período. La pérdida de <strong>164 contratos vs. junio 2025</strong> no se compensa con la mejora en cuota media (+<strong>0,84€</strong>, un <strong>+5,1%</strong> interanual), resultando en una caída real de ingresos de más de <strong>16.500€</strong>. Esta evolución sugiere que la red captadora está optimizando el perfil del donante (cuotas más altas), pero pierde volumen de captación, lo que a medio plazo puede comprometer el crecimiento neto de la cartera. El top responsable <strong>BARDIA</strong> y el equipo <strong>CAPTACIO IMPULSE</strong> son los referentes de rendimiento y deben analizarse como modelo replicable.</p><p>✅ La recomendación prioritaria es <strong>activar un plan de refuerzo de captación en Madrid y Alicante</strong>, las dos plazas con mayor caída relativa en el período, combinando el despliegue de equipos adicionales con las metodologías del equipo <strong>CAPTACIO IMPULSE</strong>. Paralelamente, se debe investigar la desaparición de <strong>Tenerife</strong> del top 10 para detectar si responde a falta de recursos o caída de rendimiento. Aprovechar la mejora en cuota media como argumento de calidad de cartera, pero fijar un objetivo mínimo de <strong>1.250 contratos semanales</strong> para recuperar el ritmo interanual antes del cierre del trimestre.</p>
+    <p>📊 El período actual (1-8 junio 2026) cierra con <strong>1.155 contratos</strong> y <strong>290.742€</strong> facturados, con una cuota media de <strong>17,20€</strong>. Respecto al mismo período del mes anterior (mayo 2026), los contratos caen ligeramente (<strong>-8 contratos</strong>, -0,7%) mientras la facturación crece en <strong>+1.243€</strong>, impulsada por una mejora de la cuota media de <strong>17,00€ a 17,20€</strong>. Sin embargo, la comparativa interanual muestra una caída más preocupante: <strong>-164 contratos</strong> (-12,4%) y <strong>-16.548€</strong> en facturación (-5,4%) respecto a junio 2025, aunque la cuota media ha mejorado significativamente de <strong>16,36€ a 17,20€</strong> (+0,84€).</p><p>🗺️ En el reparto por plazas, <strong>Madrid</strong> sigue siendo el motor principal con <strong>314 contratos</strong>, aunque acusa una caída notable frente a los <strong>352 de mayo</strong> (-10,8%). <strong>Barcelona</strong> experimenta el movimiento contrario, creciendo de <strong>144 a 168 contratos</strong> (+16,7%), consolidándose como segunda plaza. Destacan positivamente <strong>Bilbao</strong> (+9 contratos vs mayo) y <strong>Palma de Mallorca</strong> (+18 contratos), mientras <strong>Alicante</strong> retrocede de forma significativa de <strong>113 a 92 contratos</strong> (-18,6%). La ausencia de <strong>Tenerife</strong> en el top 10 actual, frente a los <strong>38 contratos</strong> que aportó en mayo, es otro dato a vigilar.</p><p>🏆 En el plano del rendimiento individual y de equipos, <strong>BARDIA</strong> se consolida como el responsable más destacado del período y <strong>CAPTACIÓ IMPULSE</strong> lidera entre los equipos. La mejora sostenida de la cuota media —que encadena tres períodos al alza: <strong>16,36€ → 17,00€ → 17,20€</strong>— indica una captación de donantes de mayor valor económico, lo que compensa parcialmente la reducción en volumen de contratos. Esta tendencia sugiere una mejora en la calidad de las captaciones, aunque no es suficiente para cubrir el gap de volumen respecto a 2025.</p><p>🎯 La recomendación prioritaria es <strong>reforzar de forma inmediata la actividad en Madrid y Alicante</strong>, las dos plazas con mayores caídas respecto a mayo, replicando las dinámicas de Barcelona y Palma de Mallorca que muestran crecimiento. Convendría analizar qué acciones concretas ha ejecutado el equipo <strong>CAPTACIÓ IMPULSE</strong> y el responsable <strong>BARDIA</strong> para escalar ese modelo a las plazas rezagadas. El objetivo debe ser recuperar el umbral de <strong>1.300+ contratos semanales</strong> que se lograba en junio 2025, manteniendo la cuota media por encima de <strong>17,00€</strong> para maximizar el impacto en facturación.</p>
   </div>
 
   <p class="sec">Evolución acumulada</p>
