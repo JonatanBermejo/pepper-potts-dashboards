@@ -51,13 +51,19 @@ body{font-family:Arial,sans-serif;background:#F5F7FA;color:#333;font-size:14px}
 </style>
 </head>
 <body>
-<div id="lockscreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1F4E79,#2E75B6);display:flex;align-items:center;justify-content:center;z-index:9999">
-  <div style="background:white;border-radius:12px;padding:32px;width:300px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+<div id="lockscreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1F4E79,#2E75B6);display:flex;align-items:center;justify-content:center;z-index:9999;-webkit-overflow-scrolling:touch">
+  <div style="background:white;border-radius:12px;padding:32px;width:90%;max-width:320px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3)">
     <div style="font-size:32px;margin-bottom:8px">⚡</div>
     <h2 style="color:#1F4E79;font-size:16px;margin-bottom:4px">Pepper Potts</h2>
     <p style="color:#999;font-size:12px;margin-bottom:20px">Informe confidencial</p>
-    <input id="pwd" type="password" placeholder="Contraseña" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:14px;margin-bottom:12px;outline:none" onkeydown="if(event.key==='Enter')unlock()">
-    <button onclick="unlock()" style="width:100%;padding:10px;background:#1F4E79;color:white;border:none;border-radius:6px;font-size:14px;cursor:pointer">Acceder</button>
+    <input id="pwd" type="password" placeholder="Contraseña" 
+      style="width:100%;padding:12px;border:2px solid #ddd;border-radius:6px;font-size:16px;margin-bottom:12px;outline:none;-webkit-appearance:none;box-sizing:border-box" 
+      onkeydown="if(event.key==='Enter')unlock()"
+      autocomplete="current-password">
+    <button onclick="unlock()" 
+      style="width:100%;padding:12px;background:#1F4E79;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;-webkit-appearance:none">
+      Acceder
+    </button>
     <p id="err" style="color:#e74c3c;font-size:12px;margin-top:8px;display:none">Contraseña incorrecta</p>
   </div>
 </div>
@@ -68,10 +74,8 @@ function unlock(){
   }else{
     document.getElementById('err').style.display='block';
     document.getElementById('pwd').value='';
-    document.getElementById('pwd').focus();
   }
 }
-document.getElementById('pwd').focus();
 </script>
 
 <div class="hdr">
@@ -91,7 +95,7 @@ document.getElementById('pwd').focus();
 
   <div class="box analisis">
     <h2>🤖 Análisis ejecutivo</h2>
-    <p>📊 El período actual (1-8 Jun 2026) muestra un rendimiento sólido con <strong>684 contratos</strong> y <strong>162.225€</strong> facturados, frente a los <strong>642 contratos</strong> y <strong>148.232€</strong> del mismo período de mayo, lo que representa un crecimiento del <strong>+6,5% en volumen</strong> y <strong>+9,4% en facturación</strong>. La comparativa interanual es aún más reveladora: se han multiplicado los contratos por <strong>casi 12x</strong> respecto a los <strong>58 contratos</strong> de junio 2025, evidenciando una expansión operativa muy significativa.</p><p>📉 La cuota media actual de <strong>16,51€</strong> mejora respecto a los <strong>15,77€</strong> de mayo (+<strong>0,74€</strong>), aunque sigue por debajo de los <strong>18,52€</strong> registrados en junio 2025. Esta caída interanual en el valor medio del contrato merece atención, ya que indica que el crecimiento en volumen se está apoyando en productos o perfiles de menor valor unitario que hace un año.</p><p>🗺️ Por distribución geográfica, <strong>Barcelona</strong> mantiene un liderazgo estable con <strong>380 contratos</strong> (vs <strong>379</strong> en mayo), mientras que <strong>Santander</strong> experimenta el crecimiento más destacado pasando de <strong>16 a 73 contratos</strong> (+<strong>356%</strong>). En contraste, <strong>Madrid</strong> retrocede de <strong>200 a 184 contratos</strong> (-<strong>8%</strong>) y <strong>Vigo</strong> cae de <strong>42 a 36</strong> (-<strong>14,3%</strong>), señalando posibles pérdidas de tracción en estas plazas. El liderazgo individual recae en <strong>VICTOR VICENTE</strong> y el equipo <strong>BERNAT PINK LADIES</strong> destaca como el de mayor rendimiento colectivo.</p><p>🎯 Se recomienda <strong>intervenir de forma inmediata en Madrid y Vigo</strong> con sesiones de refuerzo comercial y revisión de equipos, dado su retroceso conjunto frente a una tendencia global al alza. Paralelamente, replicar el modelo de crecimiento de <strong>Santander</strong> en plazas con bajo rendimiento como <strong>Oviedo</strong> (<strong>11 contratos</strong>), y trabajar estrategias de upselling para recuperar la cuota media hacia los <strong>18,52€</strong> del año anterior, lo que supondría un impacto directo de <strong>+2€ por contrato</strong>, equivalente a más de <strong>1.300€ adicionales</strong> en este mismo período.</p>
+    <p>📊 El período actual (1-8 junio 2026) muestra un rendimiento sólido con <strong>684 contratos</strong> y <strong>162.225€</strong> facturados, frente a los <strong>642 contratos</strong> y <strong>148.232€</strong> del mismo período de mayo 2026, lo que representa un crecimiento del <strong>+6,5% en volumen</strong> y <strong>+9,4% en facturación</strong>. Comparado con junio 2025, el salto es extraordinario: de apenas <strong>58 contratos</strong> y <strong>13.635€</strong> a los valores actuales, multiplicando el volumen por <strong>casi 12x</strong>.</p><p>📍 Por plazas, Barcelona mantiene un dominio estable con <strong>380 contratos</strong> (vs. <strong>379</strong> en mayo), consolidándose como el motor principal. Madrid, sin embargo, registra una caída preocupante de <strong>200 a 184 contratos</strong> (-8%). Santander es la gran sorpresa positiva, disparándose de <strong>16 a 73 contratos</strong> (+356%), mientras que Vigo retrocede de <strong>42 a 36</strong> (-14,3%) y Oviedo mejora levemente de <strong>5 a 11 contratos</strong>.</p><p>💶 La cuota media actual es de <strong>16,51€</strong>, superior a los <strong>15,77€</strong> de mayo 2026 (+4,7%), aunque todavía por debajo de los <strong>18,52€</strong> registrados en junio 2025. Esto indica que, si bien se capta más volumen, la calidad económica por contrato aún no ha recuperado los niveles del año anterior, lo que sugiere una posible presión a la baja en el perfil de donante captado. El liderazgo de <strong>VICTOR VICENTE</strong> y el equipo <strong>BERNAT PINK LADIES</strong> son referencias clave de buenas prácticas a replicar.</p><p>🎯 Se recomienda intervenir de forma inmediata en <strong>Madrid</strong>, analizando las causas de la caída del <strong>-8%</strong> e implementando las tácticas que están funcionando en Santander, donde el crecimiento del <strong>+356%</strong> demuestra un potencial de escalado rápido. Paralelamente, es prioritario trabajar en elevar la cuota media por encima de <strong>18,52€</strong> mediante formación en argumentación de upgrade, tomando como referencia las métricas del equipo líder para replicar su modelo en las plazas con menor rendimiento.</p>
   </div>
 
   <p class="sec">Evolución acumulada</p>
